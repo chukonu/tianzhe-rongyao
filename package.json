@@ -8,6 +8,10 @@
   "keywords": [
     "game"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiaoshi/tianzhe-rongyao.git"
+  },
   "author": "zulongc",
   "license": "ISC",
   "dependencies": {
