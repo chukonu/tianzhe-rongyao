@@ -1,0 +1,25 @@
+{
+  "name": "tianzhe-rongyao",
+  "version": "1.0.0",
+  "description": "a geographical game",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "zulongc",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "mobile-drag-drop": "^2.3.0-rc.1"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "google-closure-compiler": "^20180204.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

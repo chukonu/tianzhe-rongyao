@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+}
+
+starting-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("leader.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+stage {
+    box-sizing: border-box;
+    display: block;
+    padding-top: 1rem;
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: papayawhip;
+}
+
+result-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("achievement.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+stage > .stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+starting-page > .sign-in {
+    background-color: white;
+    box-shadow: 10px 10px 5px -8px rgba(0,0,0,0.42);
+    border: 1px solid rebeccapurple;
+    padding: 1rem;
+}
+
+starting-page > .sign-in > .header {
+    margin: 0.5rem 0 2.5rem 0;
+    font-size: 2rem;
+    text-align: center;
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+starting-page > .sign-in > .footer {
+    margin: .5rem 0;
+}
+
+.map {
+    position: relative;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    height: 70vw;
+    width: 70vw;
+    /* border: 1px dotted black; */
+}
+
+.region {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* background-color: blanchedalmond; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.region-name.matched {
+    color: lightgray;
+}
+
+stage > .stage > .map {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+stage > .stage > .name-list {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: whitesmoke;
+    border: .2rem solid skyblue;
+    border-radius: 10px;
+    margin: 0 10px;
+    flex: 0 0 auto;
+    align-self: start;
+    font-size: 1.4rem;
+}
+
+stage > .info {
+    margin: .5rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+stage > .info > .timer {
+    margin: 0 1rem;
+    min-width: 5rem;
+}
+
+result-page > .score {
+    -webkit-text-stroke: 1px whitesmoke;
+    font-size: 4rem;
+    color: lightcoral;
+    font-weight: bold;
+    margin: 0 0 2rem 0;
+    text-shadow:
+        3px 3px 0 whitesmoke,
+        -1px -1px 0 whitesmoke,  
+        1px -1px 0 whitesmoke,
+        -1px 1px 0 whitesmoke,
+        1px 1px 0 whitesmoke;
+}
