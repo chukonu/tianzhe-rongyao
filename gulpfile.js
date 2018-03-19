@@ -17,7 +17,11 @@ function maps() {
 }
 
 function styles() {
-	return gulp.src(['./styles/**/*']).pipe(gulp.dest('./dist/styles/'));
+	return gulp.src(['!./styles/*.css', './styles/**/*']).pipe(gulp.dest('./dist/styles/'));
+}
+
+function concatCss() {
+	return gulp.src(['./styles/*.css']).pipe(concat('app.css')).pipe(gulp.dest('./dist/styles/'));
 }
 
 function vendors() {
@@ -57,8 +61,8 @@ function compileJsWithSourceMaps() {
 		.pipe(gulp.dest('./dist/'));
 }
 
-var dev = gulp.series(clean, gulp.parallel(html, styles, maps, vendors, compileJsWithSourceMaps));
-var dist = gulp.series(clean, gulp.parallel(html, styles, maps, vendors, compileJs));
+var dev = gulp.series(clean, gulp.parallel(html, concatCss, styles, maps, vendors, compileJsWithSourceMaps));
+var dist = gulp.series(clean, gulp.parallel(html, concatCss, styles, maps, vendors, compileJs));
 
 gulp.task('dev', dev);
 gulp.task('default', dist);
