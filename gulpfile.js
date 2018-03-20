@@ -17,7 +17,7 @@ function maps() {
 }
 
 function styles() {
-	return gulp.src(['!./styles/*.css', './styles/**/*']).pipe(gulp.dest('./dist/styles/'));
+	return gulp.src(['./styles/**/*', '!./styles/*.css']).pipe(gulp.dest('./dist/styles/'));
 }
 
 function concatCss() {
