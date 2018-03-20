@@ -21,14 +21,19 @@ function styles() {
 }
 
 function concatCss() {
-	return gulp.src(['./styles/*.css']).pipe(concat('app.css')).pipe(gulp.dest('./dist/styles/'));
+	var css = [
+		'./node_modules/material-design-lite/material.min.css',
+		'./styles/*.css'
+	];
+	return gulp.src(css).pipe(concat('app.css')).pipe(gulp.dest('./dist/styles/'));
 }
 
 function vendors() {
 	var vendors = [
 		'./node_modules/angular/angular.min.js',
 		'./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js',
-		'./node_modules/mobile-drag-drop/index.min.js'
+		'./node_modules/mobile-drag-drop/index.min.js',
+		'./node_modules/material-design-lite/material.min.js'
 	];
 	return gulp.src(vendors).pipe(concat('vendors.js')).pipe(gulp.dest('./dist/'));
 }
