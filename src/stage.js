@@ -8,16 +8,17 @@
 </div>
 <div class="stage">
     <div class="name-list">
-        <region-label ng-repeat="region in $ctrl.regions" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
+        <region-label ng-repeat="region in $ctrl.regions" ng-if="$odd" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
     </div>
-    <div class="map" style="background-image:url({{$ctrl.mapUrl}});">
+    <div class="map" ng-click="$ctrl.getPoint($event)" data-map-id="{{$ctrl.mapId}}">
         <region ng-repeat="region in $ctrl.regions" 
         region-id="region.id" 
         path="region.path"
-        on-matched="$ctrl.onRegionMatched()"
-        map-url="$ctrl.mapUrl"
-        map-annotated-url="$ctrl.mapAnnotatedUrl">
+        on-matched="$ctrl.onRegionMatched()">
         </region>
+    </div>
+    <div class="name-list">
+        <region-label ng-repeat="region in $ctrl.regions" ng-if="$even" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
     </div>
 </div>`
 
@@ -34,8 +35,10 @@
 
             const soundStageFinished = new Audio('styles/tada.wav')
             const soundRegionMatched = new Audio('styles/Beep8.wav')
+            const soundFirstBlood = new Audio('styles/firstblood.wav')
             soundRegionMatched.load()
             soundStageFinished.load()
+            soundFirstBlood.load()
 
             const init = () => {
                 this.playername = GameService.getPlayer()
@@ -57,6 +60,7 @@
                 }
 
                 let stage = nextStage.value
+                this.mapId = stage.mapId
                 this.mapUrl = stage.mapUrl
                 this.mapAnnotatedUrl = stage.mapAnnotatedUrl
                 this.regions = stage.regions
@@ -81,7 +85,21 @@
                     init()
                     return
                 }
+                if (this.numMatched == 1) {
+                    soundFirstBlood.play()
+                    return
+                }
                 soundRegionMatched.play()
+            }
+            let path = ''
+            this.getPoint = ev => {
+                // console.log(ev)
+                let container = $element[0].querySelector('.map')
+                let offsetX = ev.pageX - container.offsetLeft
+                let offsetY = ev.pageY - container.offsetTop
+                let pointX = (100 * offsetX / container.clientWidth).toFixed(2)
+                let pointY = (100 * offsetY / container.clientHeight).toFixed(2)
+                console.log(path += `${pointX}% ${pointY}%, `)
             }
         }]
     })

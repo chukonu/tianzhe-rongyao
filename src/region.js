@@ -1,11 +1,9 @@
 (function (angular) {
     'use strict'
     angular.module('app').component('region', {
-        template: `<div class="region" data-id="{{::$ctrl.id}}" ng-style="$ctrl.style()"></div>`,
+        template: `<div class="region" data-id="{{::$ctrl.id}}" ng-style="$ctrl.style()" ng-class="{'is-matched':$ctrl.isMatched}" ng-click="$ctrl.getPoint($event)"></div>`,
         bindings: {
             id: '<regionId',
-            mapAnnotatedUrl: '<',
-            mapUrl: '<',
             onMatched: '&',
             path: '<'
         },
@@ -24,6 +22,7 @@
 
                 div.on('drop', e => {
                     // e.stopPropagation()
+                    e.preventDefault()
                     let data = e.dataTransfer.getData('text/plain')
                     if (data == this.id) {
                         $scope.$applyAsync(() => this.isMatched = true)
@@ -39,12 +38,10 @@
                 })
             }
             this.style = () => {
-                let style = {
-                    'background-image': `url("${this.isMatched ? this.mapAnnotatedUrl : this.mapUrl }")`,
+                return {
                     '-webkit-clip-path': `polygon(${this.path})`,
                     'clip-path': `polygon(${this.path})`
                 }
-                return style
             }
         }]
     })
