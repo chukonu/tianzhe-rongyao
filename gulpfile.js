@@ -12,10 +12,6 @@ function html() {
 	return gulp.src(['./index.html']).pipe(gulp.dest('./dist/'));
 }
 
-function maps() {
-	return gulp.src(['./maps/**/*']).pipe(gulp.dest('./dist/maps/'));
-}
-
 function styles() {
 	return gulp.src(['./styles/**/*', '!./styles/*.css']).pipe(gulp.dest('./dist/styles/'));
 }
@@ -66,8 +62,8 @@ function compileJsWithSourceMaps() {
 		.pipe(gulp.dest('./dist/'));
 }
 
-var dev = gulp.series(clean, gulp.parallel(html, concatCss, styles, maps, vendors, compileJsWithSourceMaps));
-var dist = gulp.series(clean, gulp.parallel(html, concatCss, styles, maps, vendors, compileJs));
+var dev = gulp.series(clean, gulp.parallel(html, concatCss, styles, vendors, compileJsWithSourceMaps));
+var dist = gulp.series(clean, gulp.parallel(html, concatCss, styles, vendors, compileJs));
 
 gulp.task('dev', dev);
 gulp.task('default', dist);
