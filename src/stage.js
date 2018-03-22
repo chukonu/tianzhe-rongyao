@@ -8,7 +8,7 @@
 </div>
 <div class="stage">
     <div class="name-list">
-        <region-label ng-repeat="region in $ctrl.regions" ng-if="$odd" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
+        <region-label role="button" ng-repeat="region in $ctrl.regions" ng-if="$odd" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
     </div>
     <div class="map" ng-click="$ctrl.getPoint($event)" data-map-id="{{$ctrl.mapId}}">
         <region ng-repeat="region in $ctrl.regions" 
@@ -18,7 +18,7 @@
         </region>
     </div>
     <div class="name-list">
-        <region-label ng-repeat="region in $ctrl.regions" ng-if="$even" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
+        <region-label role="button" ng-repeat="region in $ctrl.regions" ng-if="$even" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
     </div>
 </div>`
 
