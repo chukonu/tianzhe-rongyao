@@ -1,0 +1,68 @@
+body {
+    background-color: #424242;
+}
+
+.main {
+    padding-bottom: 5rem;
+}
+
+.preview-layer, clickable-layer {
+    width: 100%;
+    height: 100%;
+}
+
+.workbench {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.workbench .clippath-panel {
+    /* border: 1px solid black; */
+    background-color: #FAFAFA;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-sizing: border-box;
+    padding: 10px;
+    width: 302px;
+    align-self: flex-start;
+}
+
+.workbench .clippath-panel button {
+    padding: 1em;
+}
+
+.workbench .clippath-contents {
+    box-sizing: border-box;
+    font-size: 11px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 280px;
+    height: 300px;
+    margin: 10px 0 0 0;
+}
+
+.workbench .preview-layer {
+    background-color: black;
+    opacity: 0.5;
+}
+
+.workbench .map .prompt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: springgreen;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: .4em;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.map-selector {
+    text-align: center;
+    margin: 10px 0;
+}
