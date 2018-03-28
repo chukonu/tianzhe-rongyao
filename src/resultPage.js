@@ -2,7 +2,7 @@
     'use strict'
     angular.module('app').component('resultPage', {
         template: `<div class="score">
-    {{::$ctrl.playername}}&nbsp;&nbsp;&nbsp;&nbsp;{{::$ctrl.timeElapsed | date:"mm:ss"}}
+    <span style="letter-spacing: 3px;">{{::$ctrl.playername}}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{::$ctrl.timeElapsed | date:"mm:ss"}}
 </div>
 <!--<button ng-click="$ctrl.onPlayAgainClicked()">重新开始</button>-->`,
         controller: ['$state', 'GameService', function ResultPageController($state, GameService) {
