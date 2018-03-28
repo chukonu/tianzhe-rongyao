@@ -31,7 +31,7 @@
                     ng-attr-writing-mode="{{::(l.writingMode || '')}}"
                     ng-attr-fill="{{::(l.fill || 'black')}}"
                     ng-attr-transform="{{::(l.transform || '')}}"
-                    style="display:block;">
+                    style="display:none;">
                     {{::l.name}}
                 </text>
             </svg>
