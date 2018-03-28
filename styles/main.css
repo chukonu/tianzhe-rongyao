@@ -1,3 +1,9 @@
+/* @media (min-width: 1200px) {
+    stage > .stage {
+        padding: 0 10%;
+    }
+} */
+
 body {
     margin: 0;
     background-color: papayawhip;
@@ -37,7 +43,6 @@ result-page {
 }
 
 stage > .stage {
-    /* padding: 0 5%; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,12 +58,18 @@ starting-page > .sign-in {
 }
 
 starting-page > .sign-in > .header {
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0.5rem 2em 0.5rem 2em;
     font-size: 2rem;
     line-height: 1.2em;
     text-align: center;
     color: rebeccapurple;
     font-weight: bold;
+    transition: font-size 1s ease-in-out 0s, font-weight 0.5s ease 0s;
+}
+
+starting-page > .sign-in > .header.name-is-set {
+    font-size: 1.6rem;
+    font-weight: normal;
 }
 
 starting-page > .sign-in > .subtitle {
@@ -74,12 +85,27 @@ starting-page > .sign-in > .footer {
     margin: .5rem 0;
 }
 
+starting-page .sign-in .game-option {
+    margin-right: 2rem;
+}
+
 .map {
     position: relative;
 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+geo > .geo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* background-color: black;
+    opacity: .5; */
 }
 
 .region {
@@ -89,7 +115,7 @@ starting-page > .sign-in > .footer {
     left: 0;
     right: 0;
 
-    background-color: lavender;
+    /* background-color: lavender; */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
