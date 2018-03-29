@@ -48,6 +48,7 @@ stage > .stage {
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 5rem;
 }
 
 starting-page > .sign-in {
@@ -143,11 +144,16 @@ stage > .stage > .name-list {
 }
 
 stage > .info {
-    margin: .5rem;
     font-size: 3rem;
     display: flex;
     justify-content: center;
-    height: 1em;
+    height: 1.5em;
+    width: 100%;
+    line-height: 1.5em;
+    top: 0;
+    z-index: 10000;
+    background-color: #ffefd5e0;
+    position: fixed;
 }
 
 stage > .info > .timer {
