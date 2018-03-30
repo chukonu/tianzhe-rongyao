@@ -1,7 +1,7 @@
 (function (angular) {
     'use strict'
     angular.module('app').component('region', {
-        template: `<div class="region" data-id="{{::$ctrl.id}}" ng-style="$ctrl.style()" ng-class="{'is-matched':$ctrl.isMatched}" ng-click="$ctrl.getPoint($event)"></div>`,
+        template: `<div class="region" data-id="{{::$ctrl.id}}" ng-style="$ctrl.style()" ng-class="{'is-matched':$ctrl.isMatched}""></div>`,
         bindings: {
             id: '<regionId',
             onMatched: '&',
