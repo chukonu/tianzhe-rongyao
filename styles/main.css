@@ -23,8 +23,8 @@ starting-page {
 stage {
     box-sizing: border-box;
     display: block;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    /* padding-top: 1rem; */
+    /* padding-bottom: 1rem; */
     
     min-width: 98vw;
     min-height: 100vh;
@@ -44,11 +44,11 @@ result-page {
 
 stage > .stage {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-around;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
 }
 
 starting-page > .sign-in {
@@ -124,6 +124,7 @@ geo > .geo {
 
 .region-name.matched {
     color: lightgray;
+    display: none;
 }
 
 stage > .stage > .map {
@@ -132,7 +133,7 @@ stage > .stage > .map {
 }
 
 stage > .stage > .name-list {
-    box-sizing: border-box;
+    width: 5em;
     padding: 10px;
     background-color: whitesmoke;
     border: .2rem solid skyblue;
@@ -150,10 +151,10 @@ stage > .info {
     height: 1.5em;
     width: 100%;
     line-height: 1.5em;
-    top: 0;
+    /* top: 0;
     z-index: 10000;
-    background-color: #ffefd5e0;
-    position: fixed;
+    background-color: rgba(255, 239, 213, 0.88);
+    position: fixed; */
 }
 
 stage > .info > .timer {

@@ -7,17 +7,17 @@
     <div class="timer">{{$ctrl.timeElapsed | date:"mm:ss"}}</div>
 </div>
 <div class="stage">
-    <div class="name-list">
+    <div class="name-list" data-map-id="{{$ctrl.mapId}}">
         <region-label role="button" ng-repeat="region in $ctrl.regionsFlattened" ng-if="$odd" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
     </div>
 
-    <div class="map" ng-click="false && $ctrl.getPoint($event)" data-map-id="{{$ctrl.mapId}}">
+    <div class="map" data-map-id="{{$ctrl.mapId}}">
         
-        <div ng-if="$ctrl.roundId === 0">
+        <div ng-if="$ctrl.roundId == 1 || $ctrl.roundId == 2">
             <region ng-repeat="region in $ctrl.regions" region-id="region.id" path="region.path" on-matched="$ctrl.onRegionMatched()"></region>
         </div>
 
-        <div ng-if="$ctrl.roundId !== 0">
+        <div ng-if="$ctrl.roundId != 1 && $ctrl.roundId != 2">
             <svg xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 {{$ctrl.width}} {{$ctrl.height}}">
                 <text ng-repeat="l in $ctrl.labels" 
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="name-list">
+    <div class="name-list" data-map-id="{{$ctrl.mapId}}">
         <region-label role="button" ng-repeat="region in $ctrl.regionsFlattened" ng-if="$even" region-id="{{region.id}}" region-name="{{region.name}}"></region-label>
     </div>
 </div>`

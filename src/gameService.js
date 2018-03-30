@@ -1,10 +1,20 @@
 (function (angular) {
     'use strict'
     angular.module('app').service('GameService', ['r1s1', 'r1s2', 'r1s3', 'r5s1', 'r5s2', 'r5s3', 'r6s1', 'r6s2', 'r6s3', function GameService(r1s1, r1s2, r1s3, r5s1, r5s2, r5s3, r6s1, r6s2, r6s3) {
-        const round1 = [r1s1, r1s2, r1s3]
-        const round5 = [r5s1, r5s2, r5s3]
-        const round6 = [r6s1, r6s2, r6s3]
-        const rounds = [round1, round5, round6]
+        const round1 = [r5s1, r5s2]
+        const round2 = [r1s3]
+        const round3 = [r1s1, r1s2]
+        const round4 = [r5s3, r6s1]
+        const round5 = [r6s3]
+        
+        const rounds = [
+            round1,
+            round2,
+            round3,
+            round4,
+            round5
+        ]
+        
         let currentRound = 0
         let stages = rounds[currentRound]
 
@@ -17,7 +27,13 @@
             stages = rounds[currentRound]
         }
         this.getCurrentRound = () => currentRound
-        this.getAllRounds = () => ['游戏１', '游戏５', '游戏６']
+        this.getAllRounds = () => [
+            '游戏１', 
+            '游戏２', 
+            '游戏３', 
+            '游戏４', 
+            '游戏５'
+        ]
         
         this.setPlayer = playerName => this.playerName = playerName
         this.getPlayer = () => this.playerName
